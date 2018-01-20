@@ -1,0 +1,113 @@
+演習問題1 番号　1,2,4,5
+
+演習問題2 
+puts "Dive into Code"
+puts "私は受講生です"
+puts "30歳です"
+
+演習問題3　記号　+,-,*,/,%
+
+演習問題4　演算子　<,>,==,>,<
+
+演習問題5　文字 false,true,true,比較できない,true,false,true,false,比較できない,false
+
+演習問題6 
+name,age = "山田太郎",18
+puts name,age
+
+演習問題7
+name,age = "山田太郎",18
+puts "私は#{name}と言います。年齢は#{age}歳です。"
+
+演習問題8
+season = ["春","夏","秋"]
+season << "冬"
+puts season[2]
+
+演習問題9
+house = {
+  price: "2000万",
+  location: "東京都",
+  size: "100坪"
+}
+puts house[:location]
+
+演習問題10
+house = [
+  {price:"2000万",location: "東京都",size:"80坪"},
+  {price:"1500万",location:"千葉県",size:"50坪"},
+  {price:"800万",location:"埼玉県",size:"100坪"}
+]
+puts house[1][:location]
+puts house[0][:size]
+puts "#{house[2][:price]}、#{house[2][:size]}"
+
+演習問題11
+num = 25
+if num >= 50
+  puts "50以上だよ"
+elsif num == 30
+  puts "30ジャストだよ"
+elsif num < 50
+  puts "50未満だよ"
+else
+  puts "それ以外だよ"
+end
+
+演習問題12
+num = 24
+if num % 2 == 0
+  puts "numは偶数"
+else
+  puts "numは奇数"
+end
+
+演習問題13
+i = 0
+while i < 10
+  puts "おはよう"
+  i += 1
+end
+
+演習問題14
+for i in 1..10 do  
+  puts "こんにちわ"
+end
+
+演習問題15
+10.times do  
+  puts "こんばんわ"
+end
+
+演習問題16
+num = (1..10).to_a
+num.each do |i| 
+  puts i
+end
+
+演習問題17
+def addition(x,y,z)
+  (x + y + z) / 3
+end
+puts(addition(2,3,7))
+
+演習問題18
+def division(x,y)
+  begin
+    x / y
+  rescue => e
+    p e
+  end
+end
+puts(division(10,5))
+
+演習問題19
+戻り値 "エラーです。"
+
+演習問題20
+def doing(date,place,food)
+  puts "#{date}は#{place}で#{food}を食べる"
+end
+puts doing("今日","渋谷","カレー")
+puts doing("明日","池袋","オムライス")
+
