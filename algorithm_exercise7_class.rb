@@ -1,5 +1,6 @@
 HAND = [nil, "グー", "チョキ", "パー"]
 RESULT = ["draw", "lose..", "win!!"]
+
 module Janken
   def judge(player_hand, enemy_hand)
     result = (player_hand - enemy_hand + 3) % 3
@@ -45,14 +46,8 @@ while i < 100 do
   enemy.select_hand(rand(1..3))
   result = judge(player.hand, enemy.hand)
   
-  if result == 2
-    player.add_win
-  elsif result == 1
-    player.add_lose
-  elsif result == 0
-    player.add_draw
-    i -= 1
-  end
+  result == 2 ? player.add_win : result == 1 ? player.add_lose : ( player.add_draw; i -= 1; )
+  
   i += 1
 end
 
