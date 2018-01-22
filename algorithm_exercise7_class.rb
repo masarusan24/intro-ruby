@@ -1,6 +1,5 @@
 HAND = [nil, "グー", "チョキ", "パー"]
-RESULT = ["draw", "lost..", "won!!"]
-
+RESULT = ["draw", "lose..", "win!!"]
 module Janken
   def judge(player_hand, enemy_hand)
     result = (player_hand - enemy_hand + 3) % 3
@@ -10,20 +9,20 @@ module Janken
 end
 
 class Player
-  attr_reader :hand, :won, :lost, :draw
+  attr_reader :hand, :win, :lose, :draw
   
-  def initialize(won = 0, lost = 0, draw = 0)
-    @won = won
-    @lost = lost
+  def initialize(win = 0, lose = 0, draw = 0)
+    @win = win
+    @lose = lose
     @draw = draw
   end
   
-  def add_won
-    @won += 1
+  def add_win
+    @win += 1
   end
   
-  def add_lost
-    @lost += 1
+  def add_lose
+    @lose += 1
   end
   
   def add_draw
@@ -47,9 +46,9 @@ while i < 100 do
   result = judge(player.hand, enemy.hand)
   
   if result == 2
-    player.add_won
+    player.add_win
   elsif result == 1
-    player.add_lost
+    player.add_lose
   elsif result == 0
     player.add_draw
     i -= 1
@@ -57,4 +56,4 @@ while i < 100 do
   i += 1
 end
 
-puts "#{player.won}勝#{player.lost}敗#{player.draw}分けでした。"
+puts "#{player.win}勝#{player.lose}敗#{player.draw}分けでした。"
